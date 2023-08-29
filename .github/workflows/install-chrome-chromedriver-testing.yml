@@ -1,0 +1,31 @@
+name: Download Chrome Binary Stable Testing And Chrome Driver
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+
+  url_availability_validator:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Get version Chrome Stable
+        run: |
+          curl https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions.json
+
+      #- name: Download Chrome
+      #  run: |
+      #    sudo apt-get install unzip
+      #    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      #    sudo apt --fix-broken install -y ./google-chrome-stable_current_amd64.deb
+      #    CHROME_VERSION=$(google-chrome --version | sed 's/Google Chrome //' | sed 's/ //')
+      #    echo $CHROME_VERSION
+      #   wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROME_VERSION/linux64/chromedriver-linux64.zip
+      #    unzip chromedriver-linux64.zip -d "${GITHUB_WORKSPACE}"

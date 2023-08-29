@@ -36,4 +36,4 @@ jobs:
           wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${{steps.version.outputs.prop}}/linux64/chrome-linux64.zip
           wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${{steps.version.outputs.prop}}/linux64/chromedriver-linux64.zip
           unzip chromedriver-linux64.zip -d "${GITHUB_WORKSPACE}"
-          unzip chrome-linux.zip -d "${GITHUB_WORKSPACE}"
+          unzip chrome-linux64.zip -d "${GITHUB_WORKSPACE}"

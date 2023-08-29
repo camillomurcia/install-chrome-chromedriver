@@ -18,7 +18,8 @@ jobs:
 
       - name: Get version Chrome Stable
         run: |
-          curl https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions.json
+          curl https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions.json > version-chrome.json
+          cat version-chrome.json
 
       #- name: Download Chrome
       #  run: |
